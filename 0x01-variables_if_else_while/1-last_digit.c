@@ -19,10 +19,6 @@ int main(void)
 	/* your code goes there */
 	last = (n % 10);
 
-	if (last < 0)
-	{
-		last = (last * -1);
-	}
 	if (last > 5)
 	{
 		printf("Last digit of %d", n);
