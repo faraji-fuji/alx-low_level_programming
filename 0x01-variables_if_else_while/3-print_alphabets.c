@@ -8,7 +8,7 @@
   */
 
 int main(void)
-{	
+{
 	char end;
 	char myChar;
 	int i;
