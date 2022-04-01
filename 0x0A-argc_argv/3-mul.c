@@ -14,18 +14,18 @@
 int main(int argc, char *argv[])
 {
 
-	int a,b,result;
+	int a, b, result;
 
 	if (argc > 1)
 	{
-		a = atoi (argv[1]);
-		b = atoi (argv[2]);
-		result = a*b;
+		a = atoi(argv[1]);
+		b = atoi(argv[2]);
+		result = a * b;
 		printf("%d\n", result);
 	}
 	else
 	{
-		printf ("Error\n");
+		printf("Error\n");
 	}
 
 	return (0);
