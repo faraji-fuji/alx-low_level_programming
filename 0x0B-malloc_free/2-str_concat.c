@@ -17,11 +17,12 @@ char *str_concat(char *s1, char *s2)
 	int j = 0;
 	int x = 0;
 	char *newStr;
-	int y = 0;
 	int size = 0;
 	int size1 = 0;
 	int size2 = 0;
 	int i = 0;
+	int m, h, k;
+
 
 	if (s1 == NULL && s2 == NULL)
 	{
@@ -43,14 +44,24 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < size; i++)
+	/*for (i = 0; i < size; i++)
 	{
 		newStr[i] = s1[i];
-		if (newStr[i] == '\0')
-		{
-			newStr[i] = s2[y];
-			y++;
-		}
+		
+	}*/
+	
+	h = 0;
+	m = 0;
+	j = size1;
+	k = 0;
+	while (i < size + 1)
+	{
+		newStr[h] = s1[m];
+		newStr[j] = s2[k];
+		h++;
+		m++;
+		j++;
+		k++;
 	}
 	return (&newStr[0]);
 }
