@@ -20,10 +20,6 @@ char *str_concat(char *s1, char *s2)
 	int size = 0, size1 = 0, size2 = 0;
 	int i = 0, k = 0;
 
-	/*if (s1 == NULL && s2 == NULL)
-	{
-		return (NULL);
-	}*/
 	while (s1[j] != '\0')
 	{
 		j++;
