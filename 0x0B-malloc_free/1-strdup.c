@@ -12,18 +12,26 @@
 char *_strdup(char *str)
 {
 	char *newSpace;
-	long unsigned int i;
+	int i;
+	int size;
+	int j = 0;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	newSpace = malloc (sizeof(str));
+
+	while (str[j] != '\0')
+	{
+		j++;
+	}
+	size = j + 1;
+	newSpace = malloc(size);
 	if (newSpace == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < sizeof(str); i++)
+	for (i = 0; i < size; i++)
 	{
 		newSpace[i] = str[i];
 	}
