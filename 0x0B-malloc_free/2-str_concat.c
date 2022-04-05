@@ -37,7 +37,10 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 	for (i = 0; i < size1; i++)
-	{
+	{	if (s1 == NULL)
+		{
+			break;
+		}
 		if (s1[i] == '\0')
 		{
 			break;
@@ -46,6 +49,10 @@ char *str_concat(char *s1, char *s2)
 	}
 	for (j = i; j < size; j++)
 	{
+		if (s2 == NULL)
+		{
+			break;
+		}
 		newStr[j] = s2[k];
 		k++;
 	}
