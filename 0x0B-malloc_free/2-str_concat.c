@@ -24,17 +24,17 @@ char *str_concat(char *s1, char *s2)
 
 	while (s2[x] != '\0')
 		x++;
-
-	size1 = j + 1;
-	size2 = x + 1;
-	size = size1 + size2;
-	newStr = malloc(size - 1);
 	if (s1 == NULL && s2 == NULL)
 	{
+		newStr = malloc(2);
 		newStr[0] = '\n';
 		newStr[1] = '\0';
 		return (&newStr[0]);
 	}
+	size1 = j + 1;
+	size2 = x + 1;
+	size = size1 + size2;
+	newStr = malloc(size - 1);
 	if (newStr == NULL)
 		return (NULL);
 
