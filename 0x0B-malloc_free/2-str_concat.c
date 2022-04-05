@@ -22,8 +22,9 @@ char *str_concat(char *s1, char *s2)
 	int size1 = 0;
 	int size2 = 0;
 	int i = 0;
+	int z = 0;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
@@ -47,9 +48,9 @@ char *str_concat(char *s1, char *s2)
 	{
 		newStr[i] = s1[i];
 	}
-	for (i = size1; i <= size2; i++)
+	for (z = size1; z < size2; z++)
 	{
-		newStr[i] = s2[y];
+		newStr[z] = s2[y];
 		y++;
 	}
 	return (&newStr[0]);
