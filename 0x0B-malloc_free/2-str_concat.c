@@ -32,6 +32,7 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL && s2 == NULL)
 	{
 		newStr[0] = '\n';
+		newStr[1] = '\0';
 		return (&newStr[0]);
 	}
 	if (newStr == NULL)
