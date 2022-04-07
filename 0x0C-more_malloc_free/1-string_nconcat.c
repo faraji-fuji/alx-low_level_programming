@@ -20,32 +20,32 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	while (s1[i] != '\0')
 		i++;
-	sizeS1 = i + 1;
+	sizeS1 = i;
 	while (s2[x] != '\0')
 		x++;
-	sizeS2 = x + 1;
+	sizeS2 = x;
 	if (n >= sizeS2)
 	{
-		concatd = malloc(sizeS1 + sizeS2 - 1);
+		concatd = malloc(sizeS1 + sizeS2);
 		if (concatd == NULL)
 		{
 			return (NULL);
 		}
-		for (i = 0; i < sizeS1 - 1; i++)
+		for (i = 0; i < sizeS1; i++)
 			concatd[i] = s1[i];
-		for (j = 0; j < sizeS2; j++, i++)
+		for (j = 0; j <= sizeS2; j++, i++)
 		{
 			concatd[i] = s2[j];
 		}
 	}
 	if (n < sizeS2)
 	{
-		concatd = malloc(sizeS1 + n);
+		concatd = malloc(sizeS1 + n - 1);
 		if (concatd == NULL)
 		{
 			return (NULL);
 		}
-		for (i = 0; i < sizeS1 - 1; i++)
+		for (i = 0; i < sizeS1; i++)
 			concatd[i] = s1[i];
 		for (j = 0; j < n; j++, i++)
 		{
