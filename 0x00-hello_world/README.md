@@ -1,7 +1,7 @@
 # 0x00 Hello World
 
 ## 0-preprocessor
-A script that runs a C file through the preprocessor and save the result into
+A script that runs a C file through the preprocessor and saves the result into
 another file.
 - The C file name will be saved in the variable $CFILE.
 - The output should be saved in the file c.
@@ -27,8 +27,8 @@ A script that compiles a C file and creates an executable named cisfun.
 - The C file name will be saved in the variable $CFILE
 
 ## 4-puts.c
-A C program that prints exactly "Programming is like building a multilingual
-puzzle, followed by a new line.
+A C program that prints exactly `"Programming is like building a multilingual
+puzzle`, followed by a new line.
 - Use the function puts
 - You are not allowed to use printf
 - Your program should end with the value 0
@@ -50,3 +50,20 @@ compiled and run on.
 - Your program should return 0
 - You might have to install the package libc6-dev-i386 on your Linux (Vagrant)
   to test the -m32 gcc option
+
+## 100-intel
+A script that generates the assembly code (Intel syntax) of a C code and save
+it in an output file.
+- The C file name will be saved in the variable $CFILE.
+- The output file should be named the same as the C file, but with the
+  extension .s instead of .c.
+	- Example: if the C file is main.c, the output file should be main.s
+
+## 101-quote.c
+A C program that prints exactly and that piece of art is useful" - Dora Korpar,
+2015-10-19, followed by a new line, to the standard error.
+- You are not allowed to use any functions listed in the NAME section of the
+  man (3) printf or man (3) puts
+- Your program should return 1
+- Your program should compile without any warnings when using the -Wall gcc
+  option
