@@ -24,14 +24,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 		for (i = 0; i < size; i++)
 		{
 			index = cmp(array[i]);
-			if (index != 0)
-				break;
+			if (index > 0)
+				return (index);
 		}
 	}
 	else
 		return (-1);
-	if (index != 0)
-		return (index);
-	else
-		return (-1);
+	return (index);
 }
