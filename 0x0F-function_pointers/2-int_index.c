@@ -25,8 +25,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 		{
 			index = cmp(array[i]);
 				if (index != 0)
-					return (index);
+					break;
 		}
 	}
-	return (-1);
+	if (index != 0)
+		return (index);
+	else
+		return (-1);
 }
