@@ -18,16 +18,23 @@ int main(void)
 			{
 				while (w < 10)
 				{
-					putchar(x + 48);
-					putchar(y + 48);
-					putchar(' ');
-					putchar(z + 48);
-					putchar(w + 48);
-					if (x == 9 && y == 8 && z == 9 && w == 9)
-						break;
-					putchar(',');
-					putchar(' ');
-					w++;
+					if (x == z && y == w)
+					{
+						w++;
+					}
+					else {
+
+						putchar(x + 48);
+						putchar(y + 48);
+						putchar(' ');
+						putchar(z + 48);
+						putchar(w + 48);
+						if (x == 9 && y == 8 && z == 9 && w == 9)
+							break;
+						putchar(',');
+						putchar(' ');
+						w++;
+					}
 				}
 				w = 0;
 				z++;
@@ -38,7 +45,6 @@ int main(void)
 		}
 		x++;
 		y = 0;
-
 	}
 	putchar('\n');
 	return (0);
