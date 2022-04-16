@@ -21,20 +21,20 @@ int main(void)
 					if (x == z && y == w)
 					{
 						w++;
+						continue;
 					}
-					else {
-
-						putchar(x + 48);
-						putchar(y + 48);
-						putchar(' ');
-						putchar(z + 48);
-						putchar(w + 48);
-						if (x == 9 && y == 8 && z == 9 && w == 9)
-							break;
-						putchar(',');
-						putchar(' ');
-						w++;
+					putchar(x + 48);
+					putchar(y + 48);
+					putchar(' ');
+					putchar(z + 48);
+					putchar(w + 48);
+					if (x == 9 && y == 8 && z == 9 && w == 9)
+					{
+						break;
 					}
+					putchar(',');
+					putchar(' ');
+					w++;
 				}
 				w = 0;
 				z++;
