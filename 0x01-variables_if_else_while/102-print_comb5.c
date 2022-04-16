@@ -8,12 +8,15 @@
 
 int main(void)
 {
-	int x, y, z, w;
+	int x = 0, y = 0, z = 0, w = 1;
 
-	for (x = 0; x < 10; x++)
-		for (y = 0; y < 9; y++)
-			for (z = x; z < 10; z++)
-				for (w = y + 1; w < 10; w++)
+	while (x < 10)
+	{
+		while (y < 10)
+		{
+			while (z < 10)
+			{
+				while (w < 10)
 				{
 					putchar(x + 48);
 					putchar(y + 48);
@@ -24,7 +27,19 @@ int main(void)
 						break;
 					putchar(',');
 					putchar(' ');
+					w++;
 				}
+				w = 0;
+				z++;
+			}
+			y++;
+			z = x;
+			w = y + 1;
+		}
+		x++;
+		y = 0;
+
+	}
 	putchar('\n');
 	return (0);
 }
