@@ -1,35 +1,19 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
-  * main - prints the alphabet in lowercase
-  *
-  * Return: zero
-  */
+ * main - Print alphabet in lowercase followed by uppercase the new line.
+ *
+ * Return: Zero.
+ */
 
 int main(void)
 {
-	char end;
-	char myChar;
-	int i;
-	int j;
-	char secondChar;
+	char alpha, ALPHA;
 
-	myChar = 'a';
-	secondChar = 'A';
-	end = '\n';
-
-	for (i = 0; i < 26; i++)
-	{
-	putchar(myChar);
-	myChar += 1;
-	}
-	for (j = 0; j < 26; j++)
-	{
-	putchar(secondChar);
-	secondChar += 1;
-	}
-
-	putchar(end);
+	for (alpha = 'a'; alpha <= 'z'; alpha++)
+		putchar(alpha);
+	for (ALPHA = 'A'; ALPHA <= 'Z'; ALPHA++)
+		putchar(ALPHA);
+	putchar('\n');
 	return (0);
 }
