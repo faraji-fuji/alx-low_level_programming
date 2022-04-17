@@ -13,13 +13,13 @@
 void print_all(const char * const format, ...)
 {
 	va_list arglist;
-	int myInt, form = 0, flag = 0;
+	int myInt, form = 0, flag;
 	char myChar;
 	float myFloat;
 	char *myString;
 
 	va_start(arglist, format);
-	while (format[form] != '\n')
+	while (format[form])
 	{
 		flag = 0;
 		switch (format[form])
@@ -38,7 +38,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				myString = va_arg(arglist, char *);
-				if (myString == NULL)
+				if (!myString)
 					myString = "(nil)";
 				printf("%s", myString);
 				break;
