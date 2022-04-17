@@ -1,26 +1,17 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * main - prints the alphabet in lowercase
+ * main - print alphabet in lowercase followed by a new line.
  *
- * Return: zero
+ * Return: Zero.
  */
 
 int main(void)
-{	char end;
-	char myChar;
-	int i;
+{
+	char alpha;
 
-	myChar = 'a';
-	end = '\n';
-
-	for (i = 0; i < 26; i++)
-	{
-	putchar(myChar);
-	myChar += 1;
-	}
-
-	putchar(end);
+	for (alpha = 'a'; alpha <= 'z'; alpha++)
+		putchar(alpha);
+	putchar('\n');
 	return (0);
 }
