@@ -1,34 +1,21 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
-  * main - prints the alphabet in lowercase
-  *
-  * Return: zero
-  */
+ * main - print alphabet in lowercase except e and q followed by a new line.
+ *
+ * Return: Zero.
+ */
 
 int main(void)
 {
-	char end;
-	char myChar;
-	int i;
+	char alpha;
 
-	myChar = 'a';
-	end = '\n';
-
-	for (i = 0; i < 26; i++)
+	for (alpha = 'a'; alpha <= 'z'; alpha++)
 	{
-		if (i != 4 && i != 16)
-		{
-			putchar(myChar);
-			myChar++;
-		}
-		else
-		{
-			myChar++;
-		}
+		if (alpha == 'e' || alpha == 'q')
+			continue;
+		putchar(alpha);
 	}
-
-	putchar(end);
+	putchar('\n');
 	return (0);
 }
