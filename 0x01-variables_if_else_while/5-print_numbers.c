@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - prints digits 0123456789
  *
  * Return: zero
  */
+
 int main(void)
 {
 	int i;
