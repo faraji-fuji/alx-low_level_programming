@@ -1,22 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - print numbers
+ * main - print single digit numbers of base 10.
  *
- * Return: zero
+ * Return: Zero.
  */
+
 int main(void)
 {
 	int i;
-	int myChar;
 
-	myChar = '0';
 	for (i = 0; i < 10; i++)
-	{
-		putchar(myChar);
-		myChar++;
-	}
+		putchar(i + 48);
 	putchar('\n');
 	return (0);
 }
