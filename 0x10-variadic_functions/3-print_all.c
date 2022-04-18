@@ -14,11 +14,14 @@
 void print_all(const char * const format, ...)
 {
 	va_list arglist;
-	int myInt, f = 0, flag;
-	char myChar;
-	float myFloat;
+	int f = 0, flag;
 	char *myString;
 
+	while (!format)
+	{
+		putchar('\n');
+		exit(0);
+	}
 	va_start(arglist, format);
 	while (format[f])
 	{
@@ -28,19 +31,18 @@ void print_all(const char * const format, ...)
 		switch (format[f])
 		{
 			case 'c':
-				myChar = va_arg(arglist, int);
-				printf("%c", myChar);
+				printf("%c", va_arg(arglist, int));
 				break;
 			case 'i':
-				myInt = va_arg(arglist, int);
-				printf("%d", myInt);
+				printf("%d", va_arg(arglist, int));
 				break;
 			case 'f':
-				myFloat = va_arg(arglist, double);
-				printf("%f", myFloat);
+				printf("%f", va_arg(arglist, double));
 				break;
 			case 's':
 				myString = va_arg(arglist, char *);
+				if (!myString)
+					myString = "(nil)";
 				printf("%s", myString);
 				break;
 			default:
