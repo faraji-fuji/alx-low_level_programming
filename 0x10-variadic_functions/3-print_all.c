@@ -13,7 +13,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list arglist;
-	int myInt, f = 0;
+	int myInt, f = 0, flag;
 	char myChar;
 	float myFloat;
 	char *myString;
@@ -21,6 +21,9 @@ void print_all(const char * const format, ...)
 	va_start(arglist, format);
 	while (format[f])
 	{
+		if (f > 0 && flag != 1)
+			        printf(", ");
+		flag = 0;
 		switch (format[f])
 		{
 			case 'c':
@@ -42,7 +45,7 @@ void print_all(const char * const format, ...)
 				printf("%s", myString);
 				break;
 			default:
-				break;
+				flag = 1;
 		}
 		f++;
 	}
