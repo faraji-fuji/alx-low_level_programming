@@ -17,7 +17,9 @@ void print_all(const char * const format, ...)
 	char myChar;
 	float myFloat;
 	char *myString;
-
+	
+	if (format)
+	{
 	va_start(arglist, format);
 	while (format[f])
 	{
@@ -50,6 +52,7 @@ void print_all(const char * const format, ...)
 		f++;
 	}
 	va_end(arglist);
+	}
 	putchar('\n');
 }
 
