@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * print_all -  prints anything.
@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 	char myChar;
 	float myFloat;
 	char *myString;
-	
+
 	va_start(arglist, format);
 	while (format[f])
 	{
@@ -41,8 +41,6 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				myString = va_arg(arglist, char *);
-				if (!myString)
-					myString = "(nil)";
 				printf("%s", myString);
 				break;
 			default:
