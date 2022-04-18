@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
  * print_all -  prints anything.
@@ -18,8 +19,6 @@ void print_all(const char * const format, ...)
 	float myFloat;
 	char *myString;
 	
-	if (format)
-	{
 	va_start(arglist, format);
 	while (format[f])
 	{
@@ -52,7 +51,6 @@ void print_all(const char * const format, ...)
 		f++;
 	}
 	va_end(arglist);
-	}
 	putchar('\n');
 }
 
