@@ -13,42 +13,60 @@
 void print_all(const char * const format, ...)
 {
 	va_list arglist;
-	int myInt, form = 0, flag;
+	int myInt, f = 0;
 	char myChar;
 	float myFloat;
 	char *myString;
 
 	va_start(arglist, format);
-	while (format[form] && format[-1] != '\n')
+	while (format[f])
 	{
-		flag = 0;
-		switch (format[form])
+		switch (format[f])
 		{
 			case 'c':
 				myChar = va_arg(arglist, int);
-				printf("%c", myChar);
+				switch (f)
+				{
+					case 0: printf("%c", myChar);
+						break;
+					default: printf(", %c", myChar);
+				}
 				break;
 			case 'i':
 				myInt = va_arg(arglist, int);
-				printf("%d", myInt);
+				switch (f)
+				{
+					case 0: printf("%d", myInt);
+						break;
+					default: printf(", %d", myInt);
+				}
 				break;
 			case 'f':
 				myFloat = va_arg(arglist, double);
-				printf("%f", myFloat);
+				switch (f)
+				{
+					case 0: printf("%f", myFloat);
+						break;
+					default: printf(", %f", myFloat);
+				}
 				break;
 			case 's':
 				myString = va_arg(arglist, char *);
 				if (!myString)
 					myString = "(nil)";
-				printf("%s", myString);
+				switch (f)
+				{
+					case 0: 
+						printf("%s", myString);
+						break;
+					default: printf(", %s", myString);
+
+				}
 				break;
 			default:
-				flag = 1;
 				break;
 		}
-		form++;
-		if (flag == 0 && format[-1] != format[form])
-			printf(", ");
+		f++;
 	}
 	va_end(arglist);
 	putchar('\n');
