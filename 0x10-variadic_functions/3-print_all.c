@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 	while (format[f])
 	{
 		if (f > 0 && flag != 1)
-			        printf(", ");
+			printf(", ");
 		flag = 0;
 		switch (format[f])
 		{
