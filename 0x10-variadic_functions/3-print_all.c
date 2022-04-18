@@ -25,43 +25,21 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				myChar = va_arg(arglist, int);
-				switch (f)
-				{
-					case 0: printf("%c", myChar);
-						break;
-					default: printf(", %c", myChar);
-				}
+				printf("%c", myChar);
 				break;
 			case 'i':
 				myInt = va_arg(arglist, int);
-				switch (f)
-				{
-					case 0: printf("%d", myInt);
-						break;
-					default: printf(", %d", myInt);
-				}
+				printf("%d", myInt);
 				break;
 			case 'f':
 				myFloat = va_arg(arglist, double);
-				switch (f)
-				{
-					case 0: printf("%f", myFloat);
-						break;
-					default: printf(", %f", myFloat);
-				}
+				printf("%f", myFloat);
 				break;
 			case 's':
 				myString = va_arg(arglist, char *);
 				if (!myString)
 					myString = "(nil)";
-				switch (f)
-				{
-					case 0: 
-						printf("%s", myString);
-						break;
-					default: printf(", %s", myString);
-
-				}
+				printf("%s", myString);
 				break;
 			default:
 				break;
@@ -71,3 +49,5 @@ void print_all(const char * const format, ...)
 	va_end(arglist);
 	putchar('\n');
 }
+
+
