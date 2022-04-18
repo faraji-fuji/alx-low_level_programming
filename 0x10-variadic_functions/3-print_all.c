@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 	char *myString;
 
 	va_start(arglist, format);
-	while (format[form])
+	while (format[form] && format[-1] != '\n')
 	{
 		flag = 0;
 		switch (format[form])
@@ -39,10 +39,7 @@ void print_all(const char * const format, ...)
 			case 's':
 				myString = va_arg(arglist, char *);
 				if (!myString)
-				{
 					myString = "(nil)";
-					break;
-				}
 				printf("%s", myString);
 				break;
 			default:
