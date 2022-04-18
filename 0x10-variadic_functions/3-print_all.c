@@ -38,8 +38,11 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				myString = va_arg(arglist, char *);
-				if (myString == NULL) 
+				if (!myString)
+				{
 					myString = "(nil)";
+					break;
+				}
 				printf("%s", myString);
 				break;
 			default:
