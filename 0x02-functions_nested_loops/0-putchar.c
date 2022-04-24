@@ -20,3 +20,15 @@ int _print(void)
 	_putchar('\n');
 	return (0);
 }
+
+/**
+ * main - check the code
+ *
+ * Return: Zero.
+ */
+
+int main(void)
+{
+	_print;
+	return (0);
+}
