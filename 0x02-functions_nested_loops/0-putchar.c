@@ -1,21 +1,22 @@
 #include "main.h"
 
 /**
- * main - prints _putchar
+ *  _print - a program that prints _putchar , followed by a new line.
  *
- * Return: zero
+ * Return: Nothing.
  */
-int main(void)
-{
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
-	_putchar('\n');
 
+int _print(void)
+{
+	char *str;
+	int i = 0;
+
+	str = "_putchar";
+	while (str[i])
+	{
+		_putchar(str[i]);
+		i++;
+	}
+	_putchar('\n');
 	return (0);
 }
