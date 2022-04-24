@@ -29,8 +29,8 @@ void jack_bauer(void)
 					_putchar(z + 48);
 					_putchar(w + 48);
 					_putchar('\n');
-					if (x == '2' && y == '3' && z == '5' && w == '9')
-						break;
+					if (x == 2 && y == 3 && z == 5 && w == 9)
+						return;
 					w++;
 				}
 				z++;
