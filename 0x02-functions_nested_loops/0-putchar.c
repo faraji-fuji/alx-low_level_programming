@@ -29,6 +29,6 @@ int _print(void)
 
 int main(void)
 {
-	_print;
+	_print();
 	return (0);
 }
