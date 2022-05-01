@@ -15,7 +15,7 @@ void fib_sum(void)
 		if (!(next % 2))
 			sum += next;
 	}
-	printf("%ld\n", sum);
+	printf("%ld\n", sum + 2);
 }
 
 /**
