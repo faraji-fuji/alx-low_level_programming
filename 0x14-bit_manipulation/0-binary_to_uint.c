@@ -1,6 +1,5 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 /**
  * binary_to_uint - converts a binary number to an unsigned int.
  *
@@ -8,7 +7,6 @@
  *
  * Return: Decimal, or 0 if b is null, b contains non 0 or 1.
  */
-
 unsigned int binary_to_uint(const char *b)
 {
 	int l, i;
@@ -33,4 +31,24 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 	}
 	return (sum);
+}
+
+/**
+ * _pow_recursion - A function that returns the value of x
+ *                  raised to the power of y.
+ *
+ * @x: Integer value.
+ * @y: Integer value.
+ *
+ * Return: Value of x raised to y.
+ */
+int _pow_recursion(int x, int y)
+{
+	if (y < 0)
+		return (-1);
+	if (y == 0)
+		return (1);
+	if (y == 1)
+		return (x);
+	return (x * _pow_recursion(x, y - 1));
 }
