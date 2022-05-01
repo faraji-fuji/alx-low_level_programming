@@ -11,7 +11,7 @@ void fib_98(void)
 	c = 0;
 	while (c < 96)
 	{
-		if (next < 18000000000000000000)
+		if (next < 1800000000000000000)
 		{
 			next = first + second;
 			printf(", %ld", next);
