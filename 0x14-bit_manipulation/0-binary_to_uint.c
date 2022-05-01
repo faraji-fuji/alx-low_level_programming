@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		l--;
 		val = (b[i] - '0');
-		if (val >= 0 && val <= 1)
+		if (val == 0 || val == 1)
 		{
 			sum += (val * _pow_recursion(2, l));
 			i++;
