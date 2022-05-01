@@ -23,7 +23,7 @@ void fib_98(void)
 		{
 			next = first + second;
 			half1 = ((first + second) / 10000000000);
-			half2 = ((first + second) % 100000000000);
+			half2 = ((first + second) % 10000000000);
 			printf(", %ld%ld", half1, half2);
 			first = second;
 			second = next;
