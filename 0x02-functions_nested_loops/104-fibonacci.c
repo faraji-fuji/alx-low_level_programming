@@ -30,7 +30,7 @@ void fib_98(void)
 	{
 		next_a = first_a + second_a;
 		next_b = first_b + second_b;
-		if (next_b > 999999999)
+		if (next_b > 9999999999)
 		{
 			next_a += 1;
 			next_b %= 10000000000;
