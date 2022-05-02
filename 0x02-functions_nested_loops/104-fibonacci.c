@@ -5,30 +5,43 @@
  */
 void fib_98(void)
 {
-	unsigned long int first = 1, second = 2, next = 0, c, half1 = 0, half2 = 0;
+	unsigned long int first = 1, first_a, first_b, second = 2, second_a, second_b;
+	unsigned long int next, next_a, next_b;
+	int c;
 
-	printf("%ld, %ld", first, second);
+	printf("%lu, %lu", first, second);
 	c = 0;
+	while (c < 90)
+	{
+		next = first + second;
+		printf(", %lu", next);
+		first = second;
+		second = next;
+		c++;
+	}
+
+
+	first_a = (first / 10000000000);
+	first_b = (first % 10000000000);
+	second_a = (second / 10000000000);
+	second_b = (second % 10000000000);
+
 	while (c < 96)
 	{
-		if (next <= 4294967295)
+		next_a = first_a + second_a;
+		next_b = first_b + second_b;
+		if (next_b > 999999999)
 		{
-			next = first + second;
-			printf(", %ld", next);
-			first = second;
-			second = next;
-			c++;
+			next_a += 1;
+			next_b %= 10000000000;
 		}
-		else
-		{
-			next = first + second;
-			half1 = ((first + second) / 10000000000);
-			half2 = ((first + second) % 10000000000);
-			printf(", %ld%ld", half1, half2);
-			first = second;
-			second = next;
-			c++;
-		}
+		printf(", %lu%lu", next_a, next_b);
+
+		first_a = second_a;
+		first_b = second_b;
+		second_a = next_a;
+		second_b = next_b;
+		c++;
 	}
 	printf("\n");
 }
