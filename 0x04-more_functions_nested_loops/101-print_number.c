@@ -35,6 +35,7 @@ void print_number(int n)
 		_putchar('0');
 		return;
 	}
+
 	if (n < 0)
 	{
 		_putchar('-');
@@ -42,10 +43,23 @@ void print_number(int n)
 	}
 	d = get_decimal(n);
 
-	while (n > 0)
+	if (n == d)
 	{
-		_putchar((n / d) + '0');
-		n %= d;
-		d /= 10;
+		d = d / 10;
+		_putchar(1 + '0');
+		while (d > 0)
+		{
+			_putchar(0 + '0');
+			d = d / 10;
+		}
+	}
+	else
+	{
+		while (n > 0)
+		{
+			_putchar((n / d) + '0');
+			n %= d;
+			d /= 10;
+		}
 	}
 }
