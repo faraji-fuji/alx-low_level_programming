@@ -7,9 +7,9 @@
  *
  * Return: 1 if is prime, 0 otherwise
  */
-int _isprime(int num)
+long int _isprime(long int num)
 {
-	int i;
+	long int i;
 
 	if (num < 2)
 		return (0);
