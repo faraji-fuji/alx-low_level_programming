@@ -15,7 +15,7 @@ long int _isprime(long int num)
 		return (0);
 	if (num == 2)
 		return (1);
-	for (i = 3; i < num; i++)
+	for (i = 3; i < num / 2; i += 2)
 	{
 		if (num % i == 0 || num % 2 == 0)
 			return (0);
@@ -33,14 +33,14 @@ int main(void)
 	long int p, prime = 0, number = 612852475143;
 
 	p = 1;
-	while (p < number)
+	while (p < number / 2)
 	{
 		if (_isprime(p))
 		{
 			if (number % p == 0)
 				prime = p;
 		}
-		p++;
+		p += 2;
 	}
 	printf("%ld\n", prime);
 	return (0);
