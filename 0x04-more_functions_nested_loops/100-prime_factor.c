@@ -2,46 +2,25 @@
 #include <stdio.h>
 
 /**
- * _isprime - check if a number is prime
- * @num: number to check
- *
- * Return: 1 if is prime, 0 otherwise
- */
-long int _isprime(long int num)
-{
-	long int i;
-
-	if (num < 2)
-		return (0);
-	if (num == 2)
-		return (1);
-	for (i = 3; i < num / 2; i += 2)
-	{
-		if (num % i == 0 || num % 2 == 0)
-			return (0);
-	}
-	return (1);
-}
-
-/**
  * main - print largest prime factor
  *
  * Return: nothing
  */
 int main(void)
 {
-	long int p, prime = 0, number = 612852475143;
+	long int i, number = 612852475143;
 
-	p = 1;
-	while (p < number / 2)
+	i = 2;
+	while (i < number)
 	{
-		if (_isprime(p))
+		if (number % i == 0)
 		{
-			if (number % p == 0)
-				prime = p;
+			number = number / i;
+			continue;
 		}
-		p += 2;
+		if (number == i)
+			return (0);
+		i++;
 	}
-	printf("%ld\n", prime);
-	return (0);
+	printf("%ld\n", number);
 }
