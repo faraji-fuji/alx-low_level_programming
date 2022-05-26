@@ -75,9 +75,18 @@ void _print_number(int n)
 
 void print_number(int n)
 {
-	int na, nb;
+	int na, nb, n1, n2;
 
 	/* if integer is large, divide and print smaller parts.*/
+	if (n == -2147483647 - 1)
+	{
+		n1 = 21474;
+		n2 = 83648;
+		_putchar('-');
+		_print_number(n1);
+		_print_number(n2);
+		return;
+	}
 	if (n > 147483647)
 	{
 		na = n / 10000;
