@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * get_decimal - get decimal places
@@ -21,12 +22,12 @@ int get_decimal(int n)
 }
 
 /**
- * print_number - a function that prints an integer.
+ * _print_number - a function that prints an integer.
  * @n: integer to print
  *
  * Return: nothing
  */
-void print_number(int n)
+void _print_number(int n)
 {
 	int d;
 
@@ -62,4 +63,28 @@ void print_number(int n)
 			d /= 10;
 		}
 	}
+}
+
+
+/**
+ * print_number - a function that prints an integer.
+ * @n: integer to print
+ *
+ * Return: nothing
+ */
+
+void print_number(int n)
+{
+	int na, nb;
+
+	/* if integer is large, divide and print smaller parts.*/
+	if (n > 147483647)
+	{
+		na = n / 10000;
+		nb = n % 10000;
+		_print_number(na);
+		_print_number(nb);
+	}
+	else
+		_print_number(n);
 }
